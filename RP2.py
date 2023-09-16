@@ -249,7 +249,7 @@ def printresults(result,protdictname,protdictseq):
         for key, value in protdictname.items():
             for j in range(0,len(value)):
                 if result['pepseq'][0] in value[j]:
-                    print(tabulate([['protein_name','protein _seq','protein_coverage'],[key,protdictseq[key],parser.coverage(protdictseq[key],result['pepseq'][0])]],tablefmt="grid"))
+                    print(tabulate([['protein_name','protein _seq','protein_coverage'],[key,protdictseq[key][0:10],parser.coverage(protdictseq[key],result['pepseq'][0])]],tablefmt="grid"))
                     print(tabulate([['pep no.','pepseq','pepmass','oxipos','deampos','frag match','match','consec match'],[i,res['pepseq'][0],res['pepmass'][0], res['oxipos'][0],res['deampos'][0],a[i],round((a[i]-1)/maxmatch,3), n_consec]],tablefmt="grid")) #score calcuated based on length and maximum matches possible
                     print(tabulate((res.iloc[:,:6]),headers=['index','queryfragm','ionmass','fragmassdel','ion type','ionseq','ion_n'],tablefmt="grid"))
     
