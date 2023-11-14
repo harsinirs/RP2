@@ -261,6 +261,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create target dataabse and search against MALDI MS2 data for confident peptide and protein identification")
     parser.add_argument("input_file", help="Input file containing LC-MS/MS data exported from Mascot search")
     parser.add_argument("queryn", help="Input number of query files to search")
+    args = parser.parse_args()
 
     # assign required input arguments to variables
     input_file = args.input_file
