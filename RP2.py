@@ -8,7 +8,6 @@ from tabulate import tabulate
 from pyteomics import parser
 from collections import Counter
 from itertools import permutations
-import time
 
 def readData(filename):
     from pyteomics import parser
@@ -49,12 +48,13 @@ def readData(filename):
 
 def peptidemass(pp):
      """
-Calculates mass of peptides using their monoisotopic values as a linear sum
-This function takes a single argument, the list of peptides
-and using a mass dictionary, it calculates the mass of the peptides
-it also records the possible variants of the peptide due to modifications by identifying the residues susceptible to modification 
-The maximum number of modifications allowed per peptide is limited to 5 and all the possible permutations and combinations of modified sites is recorded as a new entry.
-It creates a new dataframe of peptides and thier mass along with the number, type and site of modification.
+     Calculates mass of peptides using their monoisotopic values as a linear sum
+     This function takes a single argument, the list of peptides
+     and using a mass dictionary, it calculates the mass of the peptides
+     it also records the possible variants of the peptide due to modifications by identifying the residues susceptible to modification 
+     The maximum number of modifications allowed per peptide is limited to 5 
+     and all the possible permutations and combinations of modified sites is recorded as a new entry.
+     It creates a new dataframe of peptides and their mass along with the number, type and site of modification.
     """
     #dictionary of amino acids mass
     mono = {'A' :71.0371, 'B': 114.5349,'C' :160.0306, 'D' :115.0269, 'E' :129.0426, 'F' :147.0684, 'G' :57.02146, 'H' :137.0589, 'I' :113.0841, 'K' :128.0950, 'L' :113.0841, 'M' :131.0405, 'N' :114.0429, 'P' :97.0528, 'Q' :128.0586, 'R' :156.1011, 'S' :87.0320, 'T' :101.0477, 'U': 150.9536, 'V' :99.0684, 'W' :186.0793, 'X':111, 'Y' :163.0633, '*' :0.0}
