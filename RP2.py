@@ -11,7 +11,6 @@ from itertools import permutations
 
 def readData(filename):
     from pyteomics import parser
-
     """
     Opens and reads in a csv formatted file exported from Mascot 
     This function takes a single argument, the name of an external LC-MS/MS search result file
@@ -47,7 +46,7 @@ def readData(filename):
     return(pp,protdictname,protdictseq)
 
 def peptidemass(pp):
-     """
+    """
      Calculates mass of peptides using their monoisotopic values as a linear sum
      This function takes a single argument, the list of peptides
      and using a mass dictionary, it calculates the mass of the peptides
