@@ -207,6 +207,7 @@ def searchdb(linkedb,linkedy,query):
     this function searches database created for query peptide and its b and y fragments are matched with peak list data
     saves all the matched peptides and fragment data in a dataframe
     """
+    print("Searching..")
     result=pd.DataFrame(columns=['queryfragm','ionmass','Delmass','iontype','ionseq','ion_n','pepseq','pep no.','pepmass', 'oxipos','deampos'])
     for key, value in query.items():
         for j in range(0,len(linkedy['y m/z'])):
