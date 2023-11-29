@@ -2,8 +2,8 @@
 Workflow that takes LC-MS/MS search results from MASCOT to create a targeted reduced database and
 searches MALDI MSI peaklists for peptide assignment and isobaric peptide differenciation with a rudimentary score assigned to matches 
 
-To run program:
-step 1: ensure script and files are in same directory
+#To run program:
+#step 1: ensure script and files are in same directory
 step 2: open terminal and open directory 
           >> cd "file path"
 step 3: run program
