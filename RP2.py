@@ -97,6 +97,8 @@ def peptidemass(pp):
     peptidemass = pd.DataFrame(masspep, columns=['pep no','mass','peptide','oxi','deam','oxipos','deampos'])
     peptidemass=peptidemass.drop_duplicates()
     peptidemass = peptidemass.reset_index(drop=True)#fix index after deletion of duplicates
+    peptidemass.to_csv('peptidemassobv.csv',index=False)
+    print("Number of peptides generated: ",len(peptidemass['pep no']))
     return(peptidemass)
 
 def fragmentation(peptidemass):
