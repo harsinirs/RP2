@@ -277,6 +277,9 @@ if __name__ == "__main__":
     databasey=fragmass(datay,'y')
     query=searchquery(queryn)
     search_op=searchdb(databaseb,databasey,query)
-    printresults(search_op,protname,protseq)
+    if search_op.empty:
+        print("No matches found")
+    else:
+        printresults(search_op,protname,protseq)
     
     
